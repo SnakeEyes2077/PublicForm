@@ -1,0 +1,163 @@
+@import url("https://fonts.googleapis.com/css2?family=Corinthia:wght@700&family=Dancing+Script:wght@500&family=Gwendolyn:wght@700&family=Indie+Flower&family=Meow+Script&family=Pacifico&family=Smooch&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+:root {
+  --gradient: linear-gradient(
+    60deg,
+    #845ec2,
+    #d65db1,
+    #ff6591,
+    #f59470,
+    #ffc75f,
+    #f9f871
+  );
+  --text-shadow: 1px 1px 2px black;
+  --highlight: rgba(82, 228, 15, 0.6);
+  --top-a: 10rem;
+  --left-a: 7.8rem;
+
+  --top-b: 10.15rem;
+  --left-b: 6.8rem;
+}
+a {
+  font-size: 2rem;
+  text-decoration: none;
+  color: #fff;
+  text-shadow: var(--text-shadow);
+  display: inline-block;
+}
+nav {
+  min-height: 20vh;
+  max-height: 30vh;
+  background: var(--gradient);
+  background-size: 200%;
+  animation: gradienttransform 5s ease-in-out infinite alternate;
+  width: 100%;
+  position: fixed;
+}
+@keyframes gradienttransform {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}
+.main-heading {
+  font-size: 3rem;
+  padding: 1rem;
+  color: #fff;
+  text-transform: uppercase;
+  text-shadow: var(--text-shadow);
+}
+.nav-item {
+  display: inline-block;
+  margin: 0.5rem 0.25rem;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  font-size: 2rem;
+  padding: 0.5rem;
+}
+.nav-item:first-child {
+  margin-left: 1rem;
+}
+
+/* Hide Dropdowns by Default */
+nav ul ul {
+  display: none;
+  position: absolute;
+  /* background-color: rgba(231, 231, 231, 0.897); */
+  border-radius: 7px;
+  /* Chrome */
+  top: var(--top-b);
+  left: var(--left-b);
+  padding: 0.5rem;
+}
+nav ul ul li {
+  padding: 0.5rem;
+  margin-bottom: 0.3rem;
+  background-color: rgb(236, 178, 136);
+  border-radius: 8px;
+  list-style: none;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+nav ul li:focus-within > ul,
+nav ul li:hover > ul {
+  display: inherit;
+  animation: fadein 0.5s;
+}
+
+/* Fonts */
+.font {
+  font-size: 1.6rem;
+  /* padding: 0.5rem; */
+}
+.font-1 {
+  font-family: "Pacifico", cursive;
+}
+.font-2 {
+  font-family: "Gwendolyn", cursive;
+}
+.font-3 {
+  font-family: "Meow Script", cursive;
+}
+.font-4 {
+  font-family: "Corinthia", cursive;
+}
+.font-5 {
+  font-family: "Smooch", cursive;
+}
+.font-1::after,
+.font-2::after,
+.font-3::after,
+.font-4::after,
+.font-5::after {
+  content: "Almost before we knew it, we had left the ground.";
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+  font-size: 70px;
+  text-align: center;
+  display: inline-block;
+  border-radius: 8px;
+  position: absolute;
+  padding: 20px;
+  right: -520px;
+  bottom: 10px;
+  left: 148px;
+  top: 8px;
+  display: none;
+}
+.font-1::after {
+  font-size: 55px;
+  padding: 18px;
+}
+
+nav ul li:hover > .font-1::after,
+nav ul li:hover > .font-2::after,
+nav ul li:hover > .font-3::after,
+nav ul li:hover > .font-4::after,
+nav ul li:hover > .font-5::after {
+  display: inherit;
+  animation: fadein 0.5s;
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* Body */
+article p {
+  padding: 2rem;
+  padding-top: 30vh;
+  font-size: 4rem;
+}
